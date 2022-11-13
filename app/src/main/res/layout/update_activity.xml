@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/background"
+    android:background="@color/gray_scale_1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="top|left"
+            android:layout_margin="8dp"
+            android:text="back"
+            app:backgroundTint="@null"
+            android:background="@drawable/rounded_button"
+            android:textColor="@color/white"
+            android:fontFamily="@font/robotoregular"
+            android:textSize="8sp" />
+    </FrameLayout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/nameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Name"
+            android:fontFamily="@font/robotoregular"
+            android:inputType="text"/>
+        <EditText
+            android:id="@+id/priceText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Price"
+            android:fontFamily="@font/robotoregular"
+            android:inputType="text"/>
+        <EditText
+            android:id="@+id/quantityText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Quantity"
+            android:fontFamily="@font/robotoregular"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:text="update"
+            android:textSize="8dp"
+            android:onClick="clickAdd"
+            app:backgroundTint="@null"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/robotoregular"
+            android:textColor="@android:color/white"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

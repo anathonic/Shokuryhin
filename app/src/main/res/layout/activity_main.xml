@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
+    android:background="@color/gray_scale_1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/optionsButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="top|right"
+            android:layout_margin="8dp"
+            android:text="settings"
+            app:backgroundTint="@null"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/robotoregular"
+            android:textColor="@color/white"
+            android:textSize="5sp" />
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="150dp"
+           android:layout_gravity="top|center"
+           android:text="Shokuryōhin"
+           android:textColor="@color/black"
+           android:fontFamily="@font/uchiyama"
+           android:textSize="40dp"
+           >
+
+       </TextView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="10dp"
+            app:backgroundTint="@null"
+            android:background="@drawable/rounded_button"
+            android:text="Add product"
+            android:textAllCaps="false"
+            android:fontFamily="@font/robotoregular"
+            android:textColor="@color/white"
+            />
+        <Button
+            android:id="@+id/showButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="10dp"
+            app:backgroundTint="@null"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="#222222"
+            android:text="Show list"
+            android:textAllCaps="false"
+            android:fontFamily="@font/robotoregular"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="bottom|right"
+            android:text="by mumulemouton"
+            android:fontFamily="@font/robotoregular"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            >
+
+        </TextView>
+    </FrameLayout>
+</RelativeLayout>

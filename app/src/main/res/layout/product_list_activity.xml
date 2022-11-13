@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/background"
+    android:background="@color/gray_scale_1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductListActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/header"
+        android:background="@color/gray_scale_1">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left|center"
+                android:layout_margin="8dp"
+                android:text="back"
+                app:backgroundTint="@null"
+                android:background="@drawable/rounded_button"
+                android:textColor="@color/white"
+                android:fontFamily="@font/robotoregular"
+                android:textSize="8sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/shoppingList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:gravity="top|center"
+            android:text="Shopping list"
+            android:fontFamily="@font/robotoregular"
+            android:textColor="@color/black"
+            android:textSize="25dp">
+
+        </TextView>
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        tools:listitem="@layout/product_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="110dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|bottom|left"
+        android:textSize="25dp"
+        android:text = "Checkout"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="70dp"
+        android:fontFamily="@font/robotoregular"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvRows"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|bottom|left"
+        android:textSize="17dp"
+        android:text = "test"
+        android:textColor="@color/black"
+        android:fontFamily="@font/robotoregular"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="50dp"
+        >
+    </TextView>
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|bottom|left"
+        android:text = "test"
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/robotoregular"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="30dp"
+        >
+    </TextView>
+    <TextView
+        android:id="@+id/tvCheckedTotal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|bottom|left"
+        android:text = "test"
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/robotoregular"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        >
+    </TextView>
+
+
+</RelativeLayout>
