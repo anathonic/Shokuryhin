@@ -1,5 +1,6 @@
 package anath.mumulemouton.shokuryhin
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -9,6 +10,7 @@ import android.widget.EditText
 import android.widget.Toast
 import android.util.Log
 import android.widget.RelativeLayout
+
 
 import androidx.appcompat.app.AppCompatActivity
 
@@ -29,6 +31,7 @@ class AddActivity : AppCompatActivity() {
         val background = findViewById<RelativeLayout>(R.id.background)
         val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPreferencesFile,
             Context.MODE_PRIVATE)
+
         val mode = sharedPreferences.getInt("darkMode",0)
         if(mode == 0){
             background.setBackgroundResource(R.color.gray_scale_1)
@@ -44,9 +47,11 @@ class AddActivity : AppCompatActivity() {
         }
     }
 
+
+
     private fun getProduct(){
         val stdList = sqlliteHelper.getAllProduct()
-        Log.e("ppp", "${stdList.size}")
+        //Log.e("ppp", "${stdList.size}")
     }
     private fun init(){
         nameEditText = findViewById(R.id.nameText)
@@ -64,12 +69,22 @@ class AddActivity : AppCompatActivity() {
         } else {
             val std = ProductModel(name = name, price = price, quantity = quantity, status = status )
             val stat = sqlliteHelper.insertProduct(std)
-            if (stat > -1){
-                Toast.makeText(this, "Product added...", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "Record not saved", Toast.LENGTH_SHORT).show()
-            }
+            val intent = Intent()
+            //intent.setPackage("com.example.receiver")
+            intent.setAction("anath.mumulemouton.MyBroadcastMessage")
+            intent.setFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES)
+            val extras = Bundle()
+            extras.putString("id",std.id.toString())
+            extras.putString("name",std.name)
+            extras.putString("price", std.price.toString())
+            extras.putString("quantity", std.quantity.toString())
+            //sendBroadcast(intent)
+//            sendOrderedBroadcast(intent,null,SenderReceiver(),
+            sendOrderedBroadcast(intent, Manifest.permission.WAKE_LOCK, SenderReceiver(),
+                null,0,"start",extras)
         }
+
+        //BroadcastSend()
         val intent1 = Intent(this, ProductListActivity::class.java)
         startActivity(intent1)
     }

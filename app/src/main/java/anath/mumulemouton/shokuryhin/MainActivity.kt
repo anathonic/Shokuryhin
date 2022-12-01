@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         addButton.setOnClickListener {
             val intent2 = Intent( this, AddActivity::class.java)
             startActivity(intent2)
+
         }
     }
 

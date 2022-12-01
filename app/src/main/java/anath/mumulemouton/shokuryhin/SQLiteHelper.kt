@@ -1,11 +1,14 @@
 package anath.mumulemouton.shokuryhin
 
+import android.Manifest
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.util.Log
+import android.os.Bundle
+
 
 
 class SQLiteHelper(context: Context) :
@@ -40,7 +43,9 @@ SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)
         contentValues.put(QUANTITY, std.quantity)
         contentValues.put(STATUS, std.status)
         val success  = db.insert(TABLE_PRODUCT, null, contentValues)
+
         db.close()
+
         return success
     }
 
@@ -55,6 +60,7 @@ SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)
             e.printStackTrace()
             db.execSQL(selectQuery)
             return ArrayList()
+
         }
         var id: Int
         var name: String
@@ -71,6 +77,7 @@ SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)
                 status = (cursor.getInt(cursor.getColumnIndexOrThrow("status")) == 1)
                 val std = ProductModel(id = id, name = name, price = price, quantity = quantity, status = status)
                 stdList.add(std)
+
             } while (cursor.moveToNext())
         }
         return stdList
@@ -94,5 +101,7 @@ SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)
         val success = db.update(TABLE_PRODUCT, contentValues, "id=" + std.id, null)
         db.close()
         return success
+
     }
+
 }

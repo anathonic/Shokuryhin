@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="anath.mumulemouton.CUSTOM_PERMISSION" />
 
     <application
         android:allowBackup="true"
@@ -41,7 +42,16 @@
             android:name=".UpdateActivity"
             android:exported="true">
         </activity>
-
+        <receiver
+            android:name=".SenderReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="anath.mumulemouton.CUSTOM_PERMISSION">
+            <intent-filter  android:priority="3">
+                <action android:name="anath.mumulemouton.MyBroadcastMessage" />
+            </intent-filter>
+        </receiver>
     </application>
+
 
 </manifest>

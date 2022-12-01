@@ -88,6 +88,7 @@ class ProductListActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = ProductAdapter()
         recyclerView.adapter = adapter
+
     }
     private fun getProduct(){
         val stdList = sqlliteHelper.getAllProduct()
