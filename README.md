@@ -9,6 +9,7 @@
 - use **Intent** for navigation
 - save key-value data with **SharedPreferences**
 - save data with **SQLite**
+- use **Broadcast Receiver** to send data to another application
 
 ##### Specification:
 
