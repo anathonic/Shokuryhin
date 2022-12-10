@@ -9,6 +9,8 @@
 - use **Intent** for navigation
 - save key-value data with **SharedPreferences**
 - save data with **SQLite**
+- save data with **Firebase**
+- login and register using **Firebase Authentication**
 - use **Broadcast Receiver** to send data to another application
 
 ##### Specification:
