@@ -1,17 +1,18 @@
 package anath.mumulemouton.shokuryhin
 
 import java.util.*
-data class ProductModel (
+
+data class ProductModel(
     var id: Int = getAutoId(),
-    var name: String,
-    var price: Double,
-    var quantity: Int,
-    var status: Boolean
-){
+    var name: String = "",
+    var price: Double = 0.0,
+    var quantity: Int = 0,
+    var status: Boolean = false
+) {
     companion object {
-    fun getAutoId():Int{
-        val random = Random()
-        return random.nextInt(100)
+        fun getAutoId(): Int {
+            val random = Random()
+            return random.nextInt(100)
+        }
     }
-}
 }

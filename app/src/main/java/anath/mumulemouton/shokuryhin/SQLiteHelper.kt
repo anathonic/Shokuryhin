@@ -10,10 +10,8 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
 
 
-
 class SQLiteHelper(context: Context) :
-SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)
-{
+    SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object {
         private const val DATABASE_VERSION = 1
         private const val DATABASE_NAME = "product.db"
@@ -24,9 +22,10 @@ SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)
         private const val QUANTITY = "quantity"
         private const val STATUS = "status"
     }
-    override fun onCreate(db: SQLiteDatabase?){
+
+    override fun onCreate(db: SQLiteDatabase?) {
         val createProduct = ("CREATE TABLE " + TABLE_PRODUCT + "(" + ID + " INTEGER PRIMARY KEY,"
-                + NAME + "TEXT," + PRICE + " DOUBLE," + QUANTITY + " INTEGER," + STATUS + " BOOLEAN" + ")" )
+                + NAME + "TEXT," + PRICE + " DOUBLE," + QUANTITY + " INTEGER," + STATUS + " BOOLEAN" + ")")
         db?.execSQL(createProduct)
     }
 
@@ -42,20 +41,20 @@ SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)
         contentValues.put(PRICE, std.price)
         contentValues.put(QUANTITY, std.quantity)
         contentValues.put(STATUS, std.status)
-        val success  = db.insert(TABLE_PRODUCT, null, contentValues)
+        val success = db.insert(TABLE_PRODUCT, null, contentValues)
 
         db.close()
 
         return success
     }
 
-    fun getAllProduct(): ArrayList<ProductModel>{
+    fun getAllProduct(): ArrayList<ProductModel> {
         val stdList: ArrayList<ProductModel> = ArrayList()
         val selectQuery = "SELECT * FROM $TABLE_PRODUCT"
         val db = this.readableDatabase
         val cursor: Cursor?
         try {
-            cursor = db.rawQuery(selectQuery,null)
+            cursor = db.rawQuery(selectQuery, null)
         } catch (e: Exception) {
             e.printStackTrace()
             db.execSQL(selectQuery)
@@ -68,20 +67,27 @@ SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)
         var quantity: Int
         var status: Boolean
 
-        if(cursor.moveToFirst()){
-            do{
+        if (cursor.moveToFirst()) {
+            do {
                 id = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
                 name = cursor.getString(cursor.getColumnIndexOrThrow("name"))
                 price = cursor.getDouble(cursor.getColumnIndexOrThrow("price"))
                 quantity = cursor.getInt(cursor.getColumnIndexOrThrow("quantity"))
                 status = (cursor.getInt(cursor.getColumnIndexOrThrow("status")) == 1)
-                val std = ProductModel(id = id, name = name, price = price, quantity = quantity, status = status)
+                val std = ProductModel(
+                    id = id,
+                    name = name,
+                    price = price,
+                    quantity = quantity,
+                    status = status
+                )
                 stdList.add(std)
 
             } while (cursor.moveToNext())
         }
         return stdList
     }
+
     fun deleteProduct(id: Int): Int {
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -90,6 +96,7 @@ SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)
         db.close()
         return success
     }
+
     fun updateProduct(std: ProductModel): Int {
         val db = this.writableDatabase
         val contentValues = ContentValues()

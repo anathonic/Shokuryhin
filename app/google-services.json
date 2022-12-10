@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "711368132146",
+    "firebase_url": " https://multiapp-f0e1e-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "shokuryhin",
+    "storage_bucket": "shokuryhin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:711368132146:android:058045c012516ea3b55e2b",
+        "android_client_info": {
+          "package_name": "anath.mumulemouton.shokuryhin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "711368132146-od1833p5josoa1m8dloq48trg5lg551e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "anath.mumulemouton.shokuryhin",
+            "certificate_hash": "59ecc43b58d17fb6bfebae5dbec0bdfc40d1f2b0"
+          }
+        },
+        {
+          "client_id": "711368132146-i2iuignq9u9fs01nbrrf9oogafj72h37.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTypwbElCYFTi7U2iVcAUMm5li0fE8sVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "711368132146-i2iuignq9u9fs01nbrrf9oogafj72h37.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

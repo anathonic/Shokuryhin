@@ -21,24 +21,26 @@ class MainActivity : AppCompatActivity() {
         val optionsButton = findViewById<Button>(R.id.optionsButton)
         val addButton = findViewById<Button>(R.id.addButton)
         val background = findViewById<RelativeLayout>(R.id.background)
-        val sharedPreferences: SharedPreferences = this.getSharedPreferences(sharedPreferencesFile,
-            Context.MODE_PRIVATE)
-        val mode = sharedPreferences.getInt("darkMode",0)
-        if(mode == 0){
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences(
+            sharedPreferencesFile,
+            Context.MODE_PRIVATE
+        )
+        val mode = sharedPreferences.getInt("darkMode", 0)
+        if (mode == 0) {
             background.setBackgroundResource(R.color.gray_scale_1)
-        } else{
+        } else {
             background.setBackgroundResource(R.color.gray_scale_4)
         }
-        showButton.setOnClickListener{
+        showButton.setOnClickListener {
             val intent0 = Intent(this, ProductListActivity::class.java)
             startActivity(intent0)
         }
         optionsButton.setOnClickListener {
-            val intent1 = Intent( this, OptionsActivity::class.java)
+            val intent1 = Intent(this, OptionsActivity::class.java)
             startActivity(intent1)
         }
         addButton.setOnClickListener {
-            val intent2 = Intent( this, AddActivity::class.java)
+            val intent2 = Intent(this, AddActivity::class.java)
             startActivity(intent2)
 
         }
