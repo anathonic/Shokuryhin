@@ -1,6 +1,5 @@
 # Shokuryōhin
 #### Grocery shopping list application
-##### by mumulemouton
 
 
 ##### Application:
